@@ -1,4 +1,0 @@
-#Mon Apr 18 05:11:42 ICT 2022
-base.0=E\:\\Kuliah\\Semester 4\\Rekayasa Perangkat Lunak ( RPL )\\aplikasi_pengambilan_obat\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
-renamed.0=classes.dex
-path.0=classes.dex
