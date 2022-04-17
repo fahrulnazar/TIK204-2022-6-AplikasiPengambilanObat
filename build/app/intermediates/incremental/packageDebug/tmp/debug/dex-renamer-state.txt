@@ -1,0 +1,4 @@
+#Sun Apr 17 22:56:52 ICT 2022
+base.0=E\:\\Kuliah\\Semester 4\\Rekayasa Perangkat Lunak ( RPL )\\TIK204-2022-6-AplikasiPengambilanObat\\aplikasi_pengambilan_obat\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
