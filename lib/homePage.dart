@@ -1,4 +1,7 @@
+import 'package:aplikasi_pengambilan_obat/antrianPage.dart';
 import 'package:aplikasi_pengambilan_obat/dokterPage.dart';
+import 'package:aplikasi_pengambilan_obat/profilePage.dart';
+import 'package:aplikasi_pengambilan_obat/resepPage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +16,7 @@ class HomePage extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.grey.shade100,
+        backgroundColor: Colors.grey.shade200,
         body: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
@@ -48,11 +51,19 @@ class HomePage extends StatelessWidget {
                         SizedBox(
                           width: 30,
                         ),
-                        CircleAvatar(
-                          backgroundColor: Colors.grey,
-                          foregroundImage: NetworkImage(
-                              'https://images.unsplash.com/photo-1629086163308-4edcb13f1eed?ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8NHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60'),
-                          radius: 26,
+                        TextButton(
+                          onPressed: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return ProfilePage();
+                            }));
+                          },
+                          child: CircleAvatar(
+                            backgroundColor: Colors.grey,
+                            foregroundImage: NetworkImage(
+                                'https://images.unsplash.com/photo-1629086163308-4edcb13f1eed?ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8NHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60'),
+                            radius: 26,
+                          ),
                         )
                       ],
                     )),
@@ -152,7 +163,12 @@ class HomePage extends StatelessWidget {
                   height: 100,
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return ResepPage();
+                      }));
+                    },
                     style: ButtonStyle(
                         backgroundColor:
                             MaterialStateProperty.all(Colors.white),
@@ -198,7 +214,12 @@ class HomePage extends StatelessWidget {
                   height: 100,
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return AntrianPage();
+                      }));
+                    },
                     style: ButtonStyle(
                         backgroundColor:
                             MaterialStateProperty.all(Colors.white),
