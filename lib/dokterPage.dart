@@ -8,7 +8,7 @@ class DokterPage extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.grey.shade100,
+        backgroundColor: Colors.grey.shade200,
         body: Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: 20,
@@ -20,6 +20,7 @@ class DokterPage extends StatelessWidget {
               children: [
                 IconButton(
                     alignment: Alignment.centerLeft,
+                    padding: EdgeInsets.zero,
                     iconSize: 28,
                     onPressed: () {
                       Navigator.pop(context);
