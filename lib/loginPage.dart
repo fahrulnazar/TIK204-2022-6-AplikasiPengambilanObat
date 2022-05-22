@@ -13,7 +13,11 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+<<<<<<< HEAD
+      backgroundColor: Colors.grey.shade200,
+=======
       backgroundColor: Colors.white,
+>>>>>>> 2004111010084
       body: Center(
         child: SingleChildScrollView(
           child: Padding(
@@ -48,7 +52,11 @@ class LoginPage extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.only(bottom: 20),
                   decoration: BoxDecoration(
+<<<<<<< HEAD
+                      color: Colors.white,
+=======
                       color: Color(0xfff5f6f8),
+>>>>>>> 2004111010084
                       borderRadius: BorderRadius.circular(10)),
                   child: TextField(
                     decoration: InputDecoration(
@@ -60,7 +68,11 @@ class LoginPage extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.only(bottom: 20),
                   decoration: BoxDecoration(
+<<<<<<< HEAD
+                      color: Colors.white,
+=======
                       color: Color(0xfff5f6f8),
+>>>>>>> 2004111010084
                       borderRadius: BorderRadius.circular(10)),
                   child: TextField(
                     obscureText: true,
@@ -105,6 +117,8 @@ class LoginPage extends StatelessWidget {
                       ),
                     )),
                 SizedBox(
+<<<<<<< HEAD
+=======
                   height: 20,
                 ),
                 Container(
@@ -127,6 +141,7 @@ class LoginPage extends StatelessWidget {
                       ),
                     )),
                 SizedBox(
+>>>>>>> 2004111010084
                   height: 60,
                 ),
                 Container(

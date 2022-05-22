@@ -17,7 +17,11 @@ class _SignupPageState extends State<SignupPage> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+<<<<<<< HEAD
+        backgroundColor: Colors.grey.shade200,
+=======
         backgroundColor: Colors.white,
+>>>>>>> 2004111010084
         body: Center(
           child: SingleChildScrollView(
             child: Padding(
@@ -40,7 +44,11 @@ class _SignupPageState extends State<SignupPage> {
                     height: 15,
                   ),
                   Text(
+<<<<<<< HEAD
+                    'Create an account so you can manage your personal health',
+=======
                     'Create an account so you can manage your personal finances',
+>>>>>>> 2004111010084
                     style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.normal,
@@ -51,7 +59,11 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                   Container(
                     decoration: BoxDecoration(
+<<<<<<< HEAD
+                        color: Colors.white,
+=======
                         color: Color(0xfff5f6f8),
+>>>>>>> 2004111010084
                         borderRadius: BorderRadius.circular(10)),
                     margin: EdgeInsets.only(bottom: 20),
                     child: TextField(
@@ -64,7 +76,11 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                   Container(
                     decoration: BoxDecoration(
+<<<<<<< HEAD
+                        color: Colors.white,
+=======
                         color: Color(0xfff5f6f8),
+>>>>>>> 2004111010084
                         borderRadius: BorderRadius.circular(10)),
                     margin: EdgeInsets.only(bottom: 20),
                     child: TextField(
@@ -77,7 +93,11 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                   Container(
                     decoration: BoxDecoration(
+<<<<<<< HEAD
+                        color: Colors.white,
+=======
                         color: Color(0xfff5f6f8),
+>>>>>>> 2004111010084
                         borderRadius: BorderRadius.circular(10)),
                     margin: EdgeInsets.only(bottom: 20),
                     child: TextField(
