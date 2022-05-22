@@ -1,10 +1,14 @@
+import 'package:aplikasi_pengambilan_obat/authentication_services.dart';
+import 'package:aplikasi_pengambilan_obat/loginPage.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class ProfilePage extends StatelessWidget {
-  const ProfilePage({Key? key}) : super(key: key);
+  const ProfilePage({Key? key, User? user}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final User? user;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -28,16 +32,20 @@ class ProfilePage extends StatelessWidget {
                 height: 20,
               ),
               CircleAvatar(
+                backgroundColor: Colors.grey,
                 radius: 46,
-                foregroundImage: NetworkImage(
-                    'https://images.unsplash.com/photo-1629086163308-4edcb13f1eed?ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8NHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60'),
+                child: Icon(
+                  Icons.person,
+                  color: Colors.white,
+                  size: 40,
+                ),
               ),
               SizedBox(
-                height: 10,
+                height: 20,
               ),
               Text(
-                'Inara Kalea',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                'Fahrul Nazar',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               SizedBox(
                 height: 50,
@@ -84,13 +92,32 @@ class ProfilePage extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(
-                        height: 35,
-                      ),
-                      Text(
-                        'Keluar',
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
+                      Align(
+                        alignment: Alignment.center,
+                        child: Container(
+                          margin: EdgeInsets.only(top: 100),
+                          padding: EdgeInsets.symmetric(horizontal: 50),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Color(0xff3347c4)),
+                          child: TextButton(
+                            onPressed: () async {
+                              await AuthServices.signOut().then((value) =>
+                                  Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: ((context) =>
+                                              LoginPage()))));
+                            },
+                            child: Text(
+                              'Keluar',
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            ),
+                          ),
+                        ),
                       ),
                     ],
                   )),
