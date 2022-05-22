@@ -13,7 +13,11 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+<<<<<<< HEAD
       backgroundColor: Colors.grey.shade200,
+=======
+      backgroundColor: Colors.white,
+>>>>>>> 2004111010084
       body: Center(
         child: SingleChildScrollView(
           child: Padding(
@@ -48,7 +52,11 @@ class LoginPage extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.only(bottom: 20),
                   decoration: BoxDecoration(
+<<<<<<< HEAD
                       color: Colors.white,
+=======
+                      color: Color(0xfff5f6f8),
+>>>>>>> 2004111010084
                       borderRadius: BorderRadius.circular(10)),
                   child: TextField(
                     decoration: InputDecoration(
@@ -60,7 +68,11 @@ class LoginPage extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.only(bottom: 20),
                   decoration: BoxDecoration(
+<<<<<<< HEAD
                       color: Colors.white,
+=======
+                      color: Color(0xfff5f6f8),
+>>>>>>> 2004111010084
                       borderRadius: BorderRadius.circular(10)),
                   child: TextField(
                     obscureText: true,
@@ -105,6 +117,31 @@ class LoginPage extends StatelessWidget {
                       ),
                     )),
                 SizedBox(
+<<<<<<< HEAD
+=======
+                  height: 20,
+                ),
+                Container(
+                    width: double.infinity,
+                    height: 55,
+                    child: ElevatedButton(
+                      style: ButtonStyle(
+                          shape: MaterialStateProperty.all(
+                              RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10))),
+                          backgroundColor:
+                              MaterialStateProperty.all(Colors.white)),
+                      onPressed: () {},
+                      child: Text(
+                        'Connect with Google',
+                        style: TextStyle(
+                          color: Color(0xff3347c4),
+                          fontSize: 18,
+                        ),
+                      ),
+                    )),
+                SizedBox(
+>>>>>>> 2004111010084
                   height: 60,
                 ),
                 Container(
