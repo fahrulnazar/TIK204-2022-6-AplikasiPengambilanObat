@@ -1,3 +1,4 @@
+import 'package:aplikasi_pengambilan_obat/authentication_services.dart';
 import 'package:aplikasi_pengambilan_obat/signupPage.dart';
 import 'package:flutter/material.dart';
 
@@ -7,17 +8,21 @@ void main() {
   runApp(LoginPage());
 }
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
   @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  @override
   Widget build(BuildContext context) {
+    bool hidePassword = true;
+    TextEditingController emailController = TextEditingController(text: '');
+    TextEditingController passwordController = TextEditingController(text: '');
     return Scaffold(
-<<<<<<< HEAD
       backgroundColor: Colors.grey.shade200,
-=======
-      backgroundColor: Colors.white,
->>>>>>> 2004111010084
       body: Center(
         child: SingleChildScrollView(
           child: Padding(
@@ -52,31 +57,35 @@ class LoginPage extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.only(bottom: 20),
                   decoration: BoxDecoration(
-<<<<<<< HEAD
                       color: Colors.white,
-=======
-                      color: Color(0xfff5f6f8),
->>>>>>> 2004111010084
                       borderRadius: BorderRadius.circular(10)),
                   child: TextField(
+                    controller: emailController,
                     decoration: InputDecoration(
                         border: OutlineInputBorder(borderSide: BorderSide.none),
                         hintStyle: TextStyle(color: Colors.grey),
-                        hintText: 'Username'),
+                        hintText: 'Email'),
                   ),
                 ),
                 Container(
                   margin: EdgeInsets.only(bottom: 20),
                   decoration: BoxDecoration(
-<<<<<<< HEAD
                       color: Colors.white,
-=======
-                      color: Color(0xfff5f6f8),
->>>>>>> 2004111010084
                       borderRadius: BorderRadius.circular(10)),
                   child: TextField(
-                    obscureText: true,
+                    controller: passwordController,
+                    obscureText: hidePassword,
                     decoration: InputDecoration(
+                        suffixIcon: IconButton(
+                          icon: Icon(hidePassword
+                              ? Icons.visibility_off
+                              : Icons.visibility),
+                          onPressed: () {
+                            setState(() {
+                              hidePassword = !hidePassword;
+                            });
+                          },
+                        ),
                         border: OutlineInputBorder(borderSide: BorderSide.none),
                         hintStyle: TextStyle(color: Colors.grey),
                         hintText: 'Password'),
@@ -102,11 +111,9 @@ class LoginPage extends StatelessWidget {
                         backgroundColor:
                             MaterialStateProperty.all(Color(0xff3347c4)),
                       ),
-                      onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                          return HomePage();
-                        }));
+                      onPressed: () async {
+                        await AuthServices.signIn(
+                            emailController.text, passwordController.text);
                       },
                       child: Text(
                         'Login',
@@ -117,31 +124,6 @@ class LoginPage extends StatelessWidget {
                       ),
                     )),
                 SizedBox(
-<<<<<<< HEAD
-=======
-                  height: 20,
-                ),
-                Container(
-                    width: double.infinity,
-                    height: 55,
-                    child: ElevatedButton(
-                      style: ButtonStyle(
-                          shape: MaterialStateProperty.all(
-                              RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10))),
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.white)),
-                      onPressed: () {},
-                      child: Text(
-                        'Connect with Google',
-                        style: TextStyle(
-                          color: Color(0xff3347c4),
-                          fontSize: 18,
-                        ),
-                      ),
-                    )),
-                SizedBox(
->>>>>>> 2004111010084
                   height: 60,
                 ),
                 Container(

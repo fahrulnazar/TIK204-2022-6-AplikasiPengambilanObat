@@ -1,3 +1,4 @@
+import 'package:aplikasi_pengambilan_obat/authentication_services.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,16 +13,15 @@ class SignupPage extends StatefulWidget {
 }
 
 class _SignupPageState extends State<SignupPage> {
+  TextEditingController usernameController = TextEditingController(text: '');
+  TextEditingController emailController = TextEditingController(text: '');
+  TextEditingController passwordController = TextEditingController(text: '');
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-<<<<<<< HEAD
         backgroundColor: Colors.grey.shade200,
-=======
-        backgroundColor: Colors.white,
->>>>>>> 2004111010084
         body: Center(
           child: SingleChildScrollView(
             child: Padding(
@@ -44,11 +44,7 @@ class _SignupPageState extends State<SignupPage> {
                     height: 15,
                   ),
                   Text(
-<<<<<<< HEAD
                     'Create an account so you can manage your personal health',
-=======
-                    'Create an account so you can manage your personal finances',
->>>>>>> 2004111010084
                     style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.normal,
@@ -59,14 +55,11 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                   Container(
                     decoration: BoxDecoration(
-<<<<<<< HEAD
                         color: Colors.white,
-=======
-                        color: Color(0xfff5f6f8),
->>>>>>> 2004111010084
                         borderRadius: BorderRadius.circular(10)),
                     margin: EdgeInsets.only(bottom: 20),
                     child: TextField(
+                      controller: usernameController,
                       decoration: InputDecoration(
                           border:
                               OutlineInputBorder(borderSide: BorderSide.none),
@@ -76,14 +69,11 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                   Container(
                     decoration: BoxDecoration(
-<<<<<<< HEAD
                         color: Colors.white,
-=======
-                        color: Color(0xfff5f6f8),
->>>>>>> 2004111010084
                         borderRadius: BorderRadius.circular(10)),
                     margin: EdgeInsets.only(bottom: 20),
                     child: TextField(
+                      controller: emailController,
                       decoration: InputDecoration(
                           border:
                               OutlineInputBorder(borderSide: BorderSide.none),
@@ -93,14 +83,11 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                   Container(
                     decoration: BoxDecoration(
-<<<<<<< HEAD
                         color: Colors.white,
-=======
-                        color: Color(0xfff5f6f8),
->>>>>>> 2004111010084
                         borderRadius: BorderRadius.circular(10)),
                     margin: EdgeInsets.only(bottom: 20),
                     child: TextField(
+                      controller: passwordController,
                       obscureText: true,
                       decoration: InputDecoration(
                           border:
@@ -127,7 +114,10 @@ class _SignupPageState extends State<SignupPage> {
                                     borderRadius: BorderRadius.circular(10))),
                             backgroundColor:
                                 MaterialStateProperty.all(Color(0xff3347c4))),
-                        onPressed: () {},
+                        onPressed: () async {
+                          await AuthServices.signUp(
+                              emailController.text, passwordController.text);
+                        },
                         child: Text(
                           'Create Account',
                           style: TextStyle(
