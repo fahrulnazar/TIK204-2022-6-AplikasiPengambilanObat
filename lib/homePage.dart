@@ -1,18 +1,17 @@
 import 'package:aplikasi_pengambilan_obat/antrianPage.dart';
 import 'package:aplikasi_pengambilan_obat/dokterPage.dart';
+import 'package:aplikasi_pengambilan_obat/obatPage.dart';
 import 'package:aplikasi_pengambilan_obat/profilePage.dart';
 import 'package:aplikasi_pengambilan_obat/resepPage.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(HomePage());
-}
-
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({Key? key, User? user}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    User? user;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -55,14 +54,16 @@ class HomePage extends StatelessWidget {
                           onPressed: () {
                             Navigator.push(context,
                                 MaterialPageRoute(builder: (context) {
-                              return ProfilePage();
+                              return ProfilePage(
+                                user: user,
+                              );
                             }));
                           },
                           child: CircleAvatar(
                             backgroundColor: Colors.grey,
-                            foregroundImage: NetworkImage(
-                                'https://images.unsplash.com/photo-1629086163308-4edcb13f1eed?ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8NHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60'),
                             radius: 26,
+                            child: Icon(Icons.person,
+                                color: Colors.white, size: 40),
                           ),
                         )
                       ],
@@ -77,7 +78,7 @@ class HomePage extends StatelessWidget {
                   style: TextStyle(fontSize: 20),
                 ),
                 Text(
-                  "Inara kalea",
+                  "Fahrul Nazar",
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 24,
@@ -265,7 +266,12 @@ class HomePage extends StatelessWidget {
                   height: 100,
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return ObatPage();
+                      }));
+                    },
                     style: ButtonStyle(
                         backgroundColor:
                             MaterialStateProperty.all(Colors.white),
