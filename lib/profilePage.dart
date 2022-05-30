@@ -8,6 +8,16 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String? name;
+
+    String? email;
+    String? alamat;
+    final auth = FirebaseAuth.instance;
+    if (auth.currentUser != null) {
+      name = auth.currentUser!.displayName;
+      email = auth.currentUser!.email;
+      alamat = auth.currentUser!.photoURL;
+    }
     final User? user;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -29,68 +39,96 @@ class ProfilePage extends StatelessWidget {
                     icon: Icon(Icons.arrow_back)),
               ),
               SizedBox(
-                height: 20,
-              ),
-              CircleAvatar(
-                backgroundColor: Colors.grey,
-                radius: 46,
-                child: Icon(
-                  Icons.person,
-                  color: Colors.white,
-                  size: 40,
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Text(
-                'Fahrul Nazar',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              ),
-              SizedBox(
-                height: 50,
+                height: 80,
               ),
               Align(
                   alignment: Alignment.centerLeft,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        'Profil',
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
+                      Row(
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(right: 10),
+                            padding: EdgeInsets.all(15),
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.grey.shade300),
+                            child: Icon(
+                              Icons.person,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('Nama'),
+                              Text(
+                                '$name',
+                                style: TextStyle(
+                                    fontSize: 18, fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                       SizedBox(
-                        height: 35,
+                        height: 20,
                       ),
-                      Text(
-                        'Notifikasi',
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
+                      Row(
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(right: 10),
+                            padding: EdgeInsets.all(15),
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.grey.shade300),
+                            child: Icon(
+                              Icons.call,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('Nomor HP'),
+                              Text(
+                                '$alamat',
+                                style: TextStyle(
+                                    fontSize: 18, fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                       SizedBox(
-                        height: 35,
+                        height: 20,
                       ),
-                      Text(
-                        'Riwayat',
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(
-                        height: 35,
-                      ),
-                      Text(
-                        'Pengaturan',
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(
-                        height: 35,
-                      ),
-                      Text(
-                        'Bantuan',
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
+                      Row(
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(right: 10),
+                            padding: EdgeInsets.all(15),
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.grey.shade300),
+                            child: Icon(
+                              Icons.person,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('Email'),
+                              Text(
+                                '$email',
+                                style: TextStyle(
+                                    fontSize: 18, fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                       Align(
                         alignment: Alignment.center,
